@@ -5,8 +5,8 @@
 // - Traits
 //
 // An imaginary magical school has a new report card generation system written
-// in Rust! Currently the system only supports creating report cards where the
-// student's grade is represented numerically (e.g. 1.0 -> 5.5). However, the
+// in Rust! Currently, the system only supports creating report cards where the
+// student's grade is represented numerically (e.g. 0.0 -> 4.0). However, the
 // school also issues alphabetical grades (A+ -> F-) and needs to be able to
 // print both types of report card!
 //
@@ -16,7 +16,8 @@
 //
 // Execute `rustlings hint quiz3` or use the `hint` watch subcommand for a hint.
 
-// I AM NOT DONE
+// I changed to scale to a more commonly noted scale as I don't know the numerical
+// to alphabetical grade conversion
 
 pub struct ReportCard {
     pub grade: f32,
@@ -28,6 +29,25 @@ impl ReportCard {
     pub fn print(&self) -> String {
         format!("{} ({}) - achieved a grade of {}",
             &self.student_name, &self.student_age, &self.grade)
+    }
+    pub fn print_alphabetical(&self) -> String {
+        let alphabetic_grade = match &self.grade {
+            g if *g >= 4.0 => "A+",
+            g if *g >= 3.7 => "A",
+            g if *g >= 3.3 => "A-",
+            g if *g >= 3.0 => "B+",
+            g if *g >= 2.7 => "B",
+            g if *g >= 2.3 => "B-",
+            g if *g >= 2.0 => "C+",
+            g if *g >= 1.7 => "C",
+            g if *g >= 1.3 => "C-",
+            g if *g >= 1.0 => "D+",
+            g if *g >= 0.7 => "D",
+            g if *g >= 0.3 => "D-",
+            _ => "F",
+        };
+        format!("{} ({}) - achieved a grade of {}",
+            &self.student_name, &self.student_age, alphabetic_grade)
     }
 }
 
@@ -50,14 +70,14 @@ mod tests {
 
     #[test]
     fn generate_alphabetic_report_card() {
-        // TODO: Make sure to change the grade here after you finish the exercise.
+        // Make sure to change the grade here after you finish the exercise.
         let report_card = ReportCard {
-            grade: 2.1,
+            grade: 4.0,
             student_name: "Gary Plotter".to_string(),
             student_age: 11,
         };
         assert_eq!(
-            report_card.print(),
+            report_card.print_alphabetical(),
             "Gary Plotter (11) - achieved a grade of A+"
         );
     }
