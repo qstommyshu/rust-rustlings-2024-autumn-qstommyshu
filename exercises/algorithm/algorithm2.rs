@@ -73,8 +73,29 @@ impl<T> LinkedList<T> {
         }
     }
 	pub fn reverse(&mut self){
-		// TODO
+        // head replace with tail, and all nodes in middle swap prev and next
+        self.reverse_node(self.start);
+        std::mem::swap(&mut self.start, &mut self.end);
 	}
+
+    fn reverse_node(&mut self, node: Option<NonNull<Node<T>>>) -> Option<NonNull<Node<T>>> {
+        match node {
+            // TODO: need to clearly understand
+            None => None,
+            Some(mut node_ptr) => {
+                // let mut node = unsafe { *node_ptr.as_ptr() };
+                let node = unsafe { node_ptr.as_mut() };
+                let next_node = node.next;
+                let prev_node = node.prev;
+                node.prev = next_node;
+                node.next = prev_node;
+
+                // std::mem::swap(&mut prev_node, &mut next_node);
+                self.reverse_node(next_node);
+                Some(node_ptr)
+            }
+        }
+    }
 }
 
 impl<T> Display for LinkedList<T>
@@ -153,7 +174,7 @@ mod tests {
 		list.reverse();
 		println!("Reversed Linked List is {}", list);
 		for i in 0..original_vec.len(){
-			assert_eq!(reverse_vec[i],*list.get(i as i32).unwrap());
+            assert_eq!(reverse_vec[i],*list.get(i as i32).unwrap());
 		}
 	}
 }

@@ -29,13 +29,13 @@ struct LinkedList<T> {
     end: Option<NonNull<Node<T>>>,
 }
 
-impl<T> Default for LinkedList<T> {
+impl<T: Ord + Clone> Default for LinkedList<T> {
     fn default() -> Self {
         Self::new()
     }
 }
 
-impl<T> LinkedList<T> {
+impl<T: Ord + Clone> LinkedList<T> {
     pub fn new() -> Self {
         Self {
             length: 0,
@@ -69,14 +69,34 @@ impl<T> LinkedList<T> {
             },
         }
     }
-	pub fn merge(list_a:LinkedList<T>,list_b:LinkedList<T>) -> Self
-	{
-		//TODO
-		Self {
-            length: 0,
-            start: None,
-            end: None,
+
+	pub fn merge(mut list_a:LinkedList<T>, mut list_b:LinkedList<T>) -> Self {
+		let mut new_list = Self::new();
+        if list_a.length == 0 && list_b.length == 0 { return new_list }
+        else if list_a.length == 0 { return list_b }
+        else if list_b.length == 0 { return list_a }
+
+
+        let mut idx_a = 0;
+        let mut idx_b = 0;
+
+        loop {
+            let val_a = list_a.get(idx_a);
+            let val_b = list_b.get(idx_b);
+            let val_new;
+            match (val_a, val_b) {
+                (Some(val_a), Some(val_b)) => {
+                    // how to compare T? use Ord trait
+                    if val_a < val_b { val_new = val_a; idx_a += 1; }
+                    else { val_new = val_b; idx_b += 1; }
+                },
+                (Some(val_a), None) => { val_new = val_a; idx_a += 1; },
+                (None, Some(val_b)) => { val_new = val_b; idx_b += 1; },
+                (None, None) => break,
+            }
+            new_list.add(val_new.clone());
         }
+        new_list
 	}
 }
 
