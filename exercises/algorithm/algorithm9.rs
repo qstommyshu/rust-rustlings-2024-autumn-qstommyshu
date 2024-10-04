@@ -2,7 +2,6 @@
 	heap
 	This question requires you to implement a binary heap function
 */
-// I AM NOT DONE
 
 use std::cmp::Ord;
 use std::default::Default;
@@ -37,7 +36,31 @@ where
     }
 
     pub fn add(&mut self, value: T) {
-        //TODO
+        // first insert the new value to the end of heap, then sift up
+        // to maintain the heap properties
+        // 1 based indexing
+        self.items.push(value);
+        self.count += 1;
+        self.sift_up(self.count);
+    }
+
+    // if reverse, then it is sift down
+    fn sift_up(&mut self, mut idx: usize) {
+        // if the inserted element is not at the top, it can be sift up
+        // check if comparator is satisfied, if it is, then the value should be sift up
+        // i.e. max_heap => (a > b) => if idx is larger, it should be at a higher level
+
+        // make sure to update parent after idx is updated
+        while idx > 1 {
+            let parent = self.parent_idx(idx);
+            if (self.comparator) (&self.items[idx], &self.items[parent]) {
+                self.items.swap(idx, parent);
+                idx = parent;
+            } else {
+                break;
+            }
+        }
+
     }
 
     fn parent_idx(&self, idx: usize) -> usize {
@@ -57,8 +80,42 @@ where
     }
 
     fn smallest_child_idx(&self, idx: usize) -> usize {
-        //TODO
-		0
+        // at each level, smallest child could be either the left child or right child, so we
+        // need to check
+        let left = self.left_child_idx(idx);
+        let right = self.right_child_idx(idx);
+
+        if right <= self.count {
+            if (self.comparator) (&self.items[left], &self.items[right]) { left }
+            else { right }
+        } else if self.children_present(idx) {
+            left
+        } else {
+            idx
+        }
+    }
+
+    pub fn pop(&mut self) -> Option<T> {
+        if self.is_empty() { return None; }
+        self.items.swap(1, self.count);
+        self.count -= 1;
+        let item = self.items.pop().unwrap();
+        if self.count > 0 { self.sift_down(1); }
+        Some(item)
+    }
+
+    fn sift_down(&mut self, mut idx: usize) {
+        // check if reversed comparator is satisfied, if it is, then the value should be sift down
+        // i.e. max_heap => (a <= b) => if idx is smaller, it should be at a lower level
+        while self.children_present(idx) {
+            let smallest_child = self.smallest_child_idx(idx);
+            if !(self.comparator) (&self.items[idx], &self.items[smallest_child]) {
+                self.items.swap(idx, smallest_child);
+                idx = smallest_child;
+            } else {
+                break;
+            }
+        }
     }
 }
 
@@ -84,8 +141,7 @@ where
     type Item = T;
 
     fn next(&mut self) -> Option<T> {
-        //TODO
-		None
+        self.pop()
     }
 }
 
