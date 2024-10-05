@@ -14,9 +14,7 @@ This is a modified version of the original rustlings repository. The original re
 
 </div>
 
-> Solutions for the [rustlings exercises](https://github.com/rust-lang/rustlings) as of version@5.4.1
-> I'll try to keep it up to date with the latest version of rustlings and add explanations to each question.
-
+> Solutions for the [rustlings exercises](https://github.com/rust-lang/rustlings).
 > The reason why I create this solution repo is that I struggled quite a bit when working on rustlings and I can't find a solution repo that is all up-to-date to 2024, even if there is, they are mostly magic solutions. I added some of my explanations to some of the solutions, but I'm not sure if they are correct, so please feel free to correct me if you find any mistakes. And if there is any better solution for questions, please let me know or create a PR, I'll be happy to merge it. Hope we can both go further in rust together!
 
 ## Doing exercises 🏃
