@@ -4,8 +4,8 @@
 This is a modified version of the original rustlings repository. The original repository can be found [here](https://github.com/rust-lang/rustlings). On top of the original exercises, this repository contains 10 more exercises to help people enhance their Rust Skills. The extra exercises are implementing common data structures and algorithms in Rust. Sure you will have fun solving them! 🎉
 
 <h1 align="center">
-  <div>Rustlings solutions 2023🦀</div><br>
-  <img src="logo.png" alt="rust" width="200">
+  <div>Rustlings solutions 2024🦀</div><br>
+  <img src="ferris-happy.svg" alt="rust" width="250">
 </h1>
 
 <div align="center">
@@ -15,9 +15,9 @@ This is a modified version of the original rustlings repository. The original re
 </div>
 
 > Solutions for the [rustlings exercises](https://github.com/rust-lang/rustlings) as of version@5.4.1
-> I'll try to keep it up to date with the latest version of rustlings and add explanations to each questions.
+> I'll try to keep it up to date with the latest version of rustlings and add explanations to each question.
 
-> The reason why I create this solution repo is that I struggled quite a bit when working on rustlings and I can't find a solution repo that is all up-to-date to 2023, even if there is, they are mostly magic solutions. I added some of my explanations to some of the solutions, but I'm not sure if they are correct, so please feel free to correct me if you find any mistakes. And if there is any better solution for questions, please let me know or create a PR, I'll be happy to merge it. Hope we can both go further in rust together!
+> The reason why I create this solution repo is that I struggled quite a bit when working on rustlings and I can't find a solution repo that is all up-to-date to 2024, even if there is, they are mostly magic solutions. I added some of my explanations to some of the solutions, but I'm not sure if they are correct, so please feel free to correct me if you find any mistakes. And if there is any better solution for questions, please let me know or create a PR, I'll be happy to merge it. Hope we can both go further in rust together!
 
 ## Doing exercises 🏃
 
@@ -51,11 +51,13 @@ rustlings list
 
 ## Progress
 
-|     Exercies      | Progress |                                                    Code                                                     |
-|:-----------------:|:--------:|:-----------------------------------------------------------------------------------------------------------:|
+|     Exercies      | Progress |                                                       Code                                                        |
+|:-----------------:|:--------:|:-----------------------------------------------------------------------------------------------------------------:|
+|      `intro`      |   2/2    |      [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/intro)      |
 |    `variables`    |   6/6    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/variables)    |
 |    `functions`    |   5/5    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/functions)    |
 |       `if`        |   3/3    |       [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/if)        |
+|      `vecs`       |   2/2    |      [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/vecs)       |
 | `primitive_types` |   6/6    | [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/primitive_types) |
 | `move_semantics`  |   6/6    | [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/move_semantics)  |
 |     `structs`     |   3/3    |     [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/structs)     |
@@ -68,6 +70,9 @@ rustlings list
 |    `generics`     |   2/2    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/generics)     |
 |     `traits`      |   5/5    |     [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/traits)      |
 |    `lifetimes`    |   3/3    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/lifetimes)    |
+|      `quiz1`      |   1/1    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/quiz1.rs)     |
+|      `quiz2`      |   1/1    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/quiz2.rs)     |
+|      `quiz3`      |   1/1    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/quiz3.rs)     |
 |    `iterators`    |   5/5    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/iterators)    |
 | `smart_pointers`  |   4/4    | [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/smart_pointers)  |
 |     `macros`      |   4/4    |     [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/macros)      |
@@ -75,7 +80,7 @@ rustlings list
 |     `threads`     |   3/3    |     [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/threads)     |
 |     `clippy`      |   3/3    |     [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/clippy)      |
 |      `tests`      |   9/9    |      [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/tests)      |
-|    `algorithm`    |   9/9    |   [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/algorithm)   |
+|    `algorithm`    |   9/9    |    [:link:](https://github.com/qstommyshu/rust-rustlings-2024-autumn-qstommyshu/tree/main/exercises/algorithm)    |
 
 <div align="center">
 
