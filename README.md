@@ -8,12 +8,6 @@ This is a modified version of the original rustlings repository. The original re
   <img src="ferris-happy.svg" alt="rust" width="250">
 </h1>
 
-<div align="center">
-
-[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/qi-shu/)](https://www.linkedin.com/in/qi-shu/)
-
-</div>
-
 > Solutions for the [rustlings exercises](https://github.com/rust-lang/rustlings).
 > The reason why I create this solution repo is that I struggled quite a bit when working on rustlings and I can't find a solution repo that is all up-to-date to 2024, even if there is, they are mostly magic solutions. I added some of my explanations to some of the solutions, but I'm not sure if they are correct, so please feel free to correct me if you find any mistakes. And if there is any better solution for questions, please let me know or create a PR, I'll be happy to merge it. Hope we can both go further in rust together!
 
